@@ -16,5 +16,41 @@ This package contains the necessary elements to serialize and deserialize data i
 3. You can now
     1. Fill the data class with the game state you wish to save and call the *SaveManager.instance.Save(SaveSlot slot, T data)* method to save the file.
     2. Load the state by using the *SaveManager.instance.Load(SaveSlot slot)* method.
+  
+## Example Usage
+
+**GameData.cs**
+```
+[System.Serializable]
+public class GameData {
+    public SVector3 playerPosition;
+    public int playerHealth;        
+}
+```
+**GameManager.cs**
+```cs
+public class GameManager : MonoBehaviour {
+    public Player player;
+
+    [...]
+    public void SaveState() {
+        var gameData = new GameData {
+            playerPosition = new SVector3(player.transform.position),
+            playerHealth = player.health
+        }
+        SaveManager.Save(SaveSlot.AutoSave, gameData);
+    }
+
+    public void LoadState() {
+        var gameData = SaveManager.LoadState<GameData>(SaveSlot.AutoSave);
+        player.transform.position = gameData.playerPosition.ToVector3();
+        player.health = gamedata.playerHealth;
+    }
+
+    [...]
+
+}
+```
+
 
 Check the documentation inside the corresponding classes to learn about the different parameters you can send to the methods described above.
