@@ -4,7 +4,8 @@ A Unity component for saving and loading state. It provides a SaveManager class 
 
 ## Contents
 - **SaveManager Monobehaviour**: This behaviour is attached to the SaveManager prefab, and should be unique (since it's accessed as a singleton). It allows to define an encryption key for your save files (should be unique for your project) and Saving/Loading state.
-- **SerializableTypes**: This is a set of Serializable classes that mirror some of Unity's classes such as Vector2, Vector3, Quaternion, Color and Rectangle. They can be easily converted back and forth between types.
+- **SerializableTypes classes**: This is a set of Serializable classes that mirror some of Unity's classes such as Vector2, Vector3, Quaternion, Color and Rectangle. They can be easily converted back and forth between types.
+- **SaveSlot enum**: This is a set of predefined names for your savefiles (Like QuickSave, Autosave, Slot1, Slot2...).
 - **SaveManager prefab**: This prefab need to be placed on the scene, and an *encryption key* needs to be set in order to make the save files secure.
 
 ## How to use
