@@ -20,7 +20,7 @@ This package contains the necessary elements to serialize and deserialize data i
 ## Example Usage
 
 **GameData.cs**
-```
+```cs
 [System.Serializable]
 public class GameData {
     public SVector3 playerPosition;
@@ -38,17 +38,15 @@ public class GameManager : MonoBehaviour {
             playerPosition = new SVector3(player.transform.position),
             playerHealth = player.health
         }
-        SaveManager.Save(SaveSlot.AutoSave, gameData);
+        SaveManager.instance.Save(SaveSlot.AutoSave, gameData);
     }
 
     public void LoadState() {
-        var gameData = SaveManager.LoadState<GameData>(SaveSlot.AutoSave);
+        var gameData = SaveManager.instance.LoadState<GameData>(SaveSlot.AutoSave);
         player.transform.position = gameData.playerPosition.ToVector3();
         player.health = gamedata.playerHealth;
     }
-
     [...]
-
 }
 ```
 
