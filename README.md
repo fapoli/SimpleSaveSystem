@@ -12,8 +12,8 @@ A Unity component for saving and loading state. It provides a SaveManager class 
 1. Place the SaveManager prefab inside your Unity scene
 2. Create a data model for your save files. The data model must be **fully serializable**. To aid in this, some Types are provided to convert Unity's non serializable types into serializable ones.
 3. You can now
-  1. Fill the data class with the game state you wish to save and call the *SaveManager.instance.Save(SaveSlot slot, T data)* method to save the file.
-  2. Load the state by using the *SaveManager.instance.Load(SaveSlot slot)* method.
+    1. Fill the data class with the game state you wish to save and call the *SaveManager.instance.Save(SaveSlot slot, T data)* method to save the file.
+    2. Load the state by using the *SaveManager.instance.Load(SaveSlot slot)* method.
 
 **IMPORTANT:** This package contains the necessary elements to serialize and deserialize data in an encrypted format, and adds some helpers. The state management (and restoring that state) is not covered by this library because it may be completely different from game to game.
 
