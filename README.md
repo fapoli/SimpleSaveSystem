@@ -1,6 +1,6 @@
 # Simple Save System
 
-A Unity component for saving and loading state. It provides a SaveManager class that saves encrypted save files into your game's data folder. It also provides some useful serializable classes that are transformed from the non-serializable Unity clases, like for example Vector2, Vector3, Quaternion... 
+A Unity Component to manage saving and loading state. Files are encrypted using an encryption key for better security. It provides a SaveManager class that saves encrypted save files into your game's data folder. It also provides some useful serializable classes that are transformed from the non-serializable Unity clases, like for example Vector2, Vector3, Quaternion... 
 
 ## Contents
 - **SaveManager Monobehaviour**: This behaviour is attached to the SaveManager prefab, and should be unique (since it's accessed as a singleton). It allows to define an encryption key for your save files (should be unique for your project) and Saving/Loading state.
